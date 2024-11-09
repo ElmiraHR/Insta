@@ -1,0 +1,45 @@
+.postList {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    width: 60%;
+    justify-self: flex-end;
+    margin-left: 80px;
+  }
+  
+  @media (max-width: 768px) {
+    .postList {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  .postItem {
+    max-width: 300px;
+   
+  }
+  .postItem img{
+    width: 403px;
+    height: 505px;
+  }
+  .postItem > div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .postItem > div img {
+    width: 36px;
+    height: 36px;
+    border: 1px solid #fafafa;
+    border-radius: 50%;
+  }
+  
+  .created {
+    color: gray;
+  }
+  
+  .postItem img {
+    max-width: 307px;
+    max-height: 307px;
+  }
+  

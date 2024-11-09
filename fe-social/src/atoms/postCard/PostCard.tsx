@@ -106,10 +106,10 @@
 
 
 import { useEffect, useState } from "react";
-import { $api } from "../api/api";
+import { $api } from "../../api/api";
 import styles from "./Posts.module.css";
-import { parseData } from "../helpers/parseData";
-import { matchUserId } from "../helpers/matchUsersId";
+import { parseData } from "../../helpers/parseData";
+import { matchUserId } from "../../helpers/matchUsersId";
 
 export type Post = {
   _id: string;

@@ -1,7 +1,6 @@
 import Sidebar from "../../molecules/sidebar/sidebarHome/SidebarMain";
 import s from "./HomePage.module.css";
 import Footer from "../../molecules/footer/Footer";
-import { ImageForm } from "../../molecules/ImageForm";
 import PostsList from "../../molecules/PostsList";
 import { useNavigate } from "react-router-dom";
 
@@ -22,9 +21,6 @@ export const HomePage = () => {
         <button onClick={handleLogout} className={s.logoutButton}>Logout</button>
         {/* Контейнер для прокрутки постов */}
         <div className={s.postsContainer}>
-          <span>File Uploader</span>
-          <ImageForm />
-          <span>Posts</span>
           <PostsList />
         </div>
       </div>

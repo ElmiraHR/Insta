@@ -97,4 +97,66 @@
     width: 100%;
     height: auto;
   }
-  
+  /* Profile.module.css */
+
+.profileContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.editProfile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 500px; /* Ограничение ширины для лучшего отображения */
+  margin-top: 20px;
+  gap: 15px; /* Расстояние между элементами */
+}
+
+.editProfile h2 {
+  margin-bottom: 10px;
+}
+
+.editProfile input[type="text"],
+.editProfile textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.editProfile input[type="file"] {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.imageUpload {
+  cursor: pointer;
+}
+
+.previewImage {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-top: 10px;
+}
+
+.saveButton {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.saveButton:hover {
+  background-color: #0056b3;
+}

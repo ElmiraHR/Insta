@@ -19,6 +19,7 @@ import Login from "./molecules/loginForm/LoginForm";
 import { FC } from "react";
 import Sidebar from "./molecules/sidebar/sidebarHome/SidebarMain";
 import Footer from "./molecules/footer/Footer";
+import Error from "./pages/errorePage/ErrorPage";
 
 
 const Layout: FC<{ children: React.ReactNode }> = ({ children }) => {
@@ -50,7 +51,7 @@ const App: FC = () => {
             path="/homePage"
             element={
               <ProtectedRoute element={<Layout><HomePage /></Layout>} />
-            }
+           }
           />
 
           {/* Страница Explore с сайдбаром и футером */}
@@ -64,6 +65,13 @@ const App: FC = () => {
             path="/profile"
             element={<Layout><Profile /></Layout>}
           />
+
+         {/* Страница error*/}
+         <Route
+            path="/*"
+            element={<Layout><Error /></Layout>}
+          />
+
 
           {/* Редирект на страницу входа по умолчанию */}
           <Route path="*" element={<Navigate to="/signin" />} />

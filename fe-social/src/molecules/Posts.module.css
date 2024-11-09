@@ -1,10 +1,15 @@
 .postList {
+  max-width: 80%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 4px;
-  
+  margin-right: 30px;
 }
-
+@media (max-width: 1200px) {
+  .postList {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 @media (max-width: 768px) {
   .postList {
     grid-template-columns: 1fr;

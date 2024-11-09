@@ -13,17 +13,15 @@
   }
   
   .postsContainer {
-    width: 100%; /* Ширина контейнера с постами */
+    width: 80%ß; /* Ширина контейнера с постами */
     max-height: 600px; /* Ограничиваем высоту контейнера с постами */
     overflow-y: auto; /* Включаем вертикальную прокрутку */
-    padding-right: 300px;
     padding-left: 80px;
     box-sizing: border-box;
     margin-top: 58px;
     background-color: #fff; /* Белый фон, если нужно */
     border-radius: 8px; /* Закругленные углы для контейнера */
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
     gap: 40px;
   }
   
