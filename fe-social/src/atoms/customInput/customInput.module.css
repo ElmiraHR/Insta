@@ -1,0 +1,7 @@
+.customInput {
+ display: inline-block;
+ min-width: 268px;
+ max-width: 300px;
+ font-size: 12px;
+ margin: 16px;
+}

@@ -1,0 +1,77 @@
+.resetContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    width: 350px;
+    height: 554px;
+    border: 1px solid #DBDBDB;
+    border-radius: 1px;
+    margin: 80px auto 10px;
+    }
+    
+    .logContainer{
+        display: flex;
+        width: 350px;
+        height: 63px;
+        border: 1px solid #DBDBDB;
+        border-radius: 1px;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;  
+        background-color: #FAFAFA;
+        text-decoration: none;
+    }
+    .logContainer a{
+        text-decoration: none;
+        color: #262626;
+        font-size: 14px;
+        font-weight: 500;
+    }
+    .resetInputContainer{
+        max-width: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0 auto;
+    }
+    .resetInputContainer input{
+        max-width: 300px;
+    }
+    .resetPar{
+        width: 300px;
+        font-size: 14px;
+        color: #737373;
+    }
+    .resetInputContainer{
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        justify-content: center;
+    }
+    .lineContainer{
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        margin-top: 22px;
+    }
+    .line{
+        width: 106px;
+        height: 1px;
+        border-bottom: 1px solid #DBDBDB;
+    }
+    .lockSubTitle{
+        font-size: 16px;
+        font-weight: 500;
+        color: #000;
+        height: 5px;
+    }
+    .createAccount{
+       display: flex;
+       justify-content: center;
+       text-decoration: none;
+       color: #000;
+       font-weight: 500;
+       font-size: 14px;
+    }

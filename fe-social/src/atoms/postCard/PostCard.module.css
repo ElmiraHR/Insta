@@ -1,0 +1,39 @@
+.postList {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    
+  }
+  
+  @media (max-width: 768px) {
+    .postList {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  .postItem {
+    border: 0.5px solid #737373;
+  }
+  
+  .postItem > div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .postItem > div img {
+    width: 36px;
+    height: 36px;
+    border: 1px solid #fafafa;
+    border-radius: 50%;
+  }
+  
+  .created {
+    color: gray;
+  }
+  
+  .postItem img {
+    max-width: 307px;
+    max-height: 307px;
+  }
+  

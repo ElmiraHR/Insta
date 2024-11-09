@@ -1,0 +1,62 @@
+.loginContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 350px;
+    height: 411px;
+    border: 1px solid #DBDBDB;
+    border-radius: 1px;
+    margin: 93px auto 10px;
+    }
+    .lineContainer{
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        margin-top: 22px;
+    }
+    .line{
+        width: 106px;
+        height: 1px;
+        border-bottom: 1px solid #DBDBDB;
+    }
+    .forgot{
+        text-decoration: none;
+        color: #00376B;
+        margin-top: 60px;
+        margin-bottom: 23px;
+    }
+    .signupContainer{
+        display: flex;
+        width: 350px;
+        height: 63px;
+        border: 1px solid #DBDBDB;
+        border-radius: 1px;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;  
+    }
+    .signup_container a{
+          color: #0095F6;
+          text-decoration: none;
+    }
+    .phone img{
+        width: 380px;
+        height: 581px;
+        margin: 93px auto;
+    }
+    .loginPageContainer{
+        display: flex;
+        gap: 32px;
+        justify-content: center;
+    }
+    .loginLink{
+        text-decoration: none;
+        color: #0095F6;
+    }
+    .errorMessage {
+        color: red;
+        font-size: 12px;
+        text-align: center;
+        margin-top: 10px; /* можно добавить отступ сверху, если нужно */
+      }

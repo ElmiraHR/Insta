@@ -1,0 +1,117 @@
+.postList {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+  
+}
+
+@media (max-width: 768px) {
+  .postList {
+    grid-template-columns: 1fr;
+  }
+}
+
+.postItem {
+  
+  border: 0.5px solid #737373;
+}
+
+.postItem > div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.postItem > div img {
+  width: 36px;
+  height: 36px;
+  border: 1px solid #fafafa;
+  border-radius: 50%;
+}
+
+.created {
+  color: gray;
+}
+
+.postItem img {
+  width: 100%;
+  height: 307px;
+}
+
+
+
+
+
+
+.modalCommentsSection {
+  display: flex;
+  flex-direction: column;
+}
+
+.commentsList {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+.comment {
+  margin-bottom: 10px;
+}
+
+.commentActions {
+  display: flex;
+  gap: 10px;
+  font-size: 1.2em;
+  color: gray;
+}
+
+.commentTime {
+  font-size: 0.8em;
+  color: gray;
+}
+
+.addComment {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.emojiButton {
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+.emojiPicker {
+  position: absolute;
+  bottom: 50px;
+  left: 10px;
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 5px;
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.emojiImage {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.commentInput {
+  flex: 1;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.addCommentButton {
+  padding: 5px 10px;
+  background-color: #0095f6;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
