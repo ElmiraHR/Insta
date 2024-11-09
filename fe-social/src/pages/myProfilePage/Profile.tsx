@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import s from './Profile.module.css';
 import PostsList from '../../molecules/PostsList';
 
@@ -25,33 +24,33 @@ interface UserData {
   posts: Post[];
 }
 
-interface ProfileProps {
-  userId: string; // ID пользователя для запроса
-}
-
-export const Profile: React.FC<ProfileProps> = ({ userId }) => {
+export const Profile: React.FC = () => {
   const [userData, setUserData] = useState<UserData | null>(null); // Данные пользователя
   const [selectedPost, setSelectedPost] = useState<Post | null>(null);
   const [loading, setLoading] = useState<boolean>(true); // Статус загрузки
   const [error, setError] = useState<string | null>(null); // Статус ошибки
 
   useEffect(() => {
-    const fetchUserData = async () => {
-      setLoading(true); // Устанавливаем статус загрузки в true
-      setError(null); // Очищаем ошибку перед новым запросом
-
+    const fetchUserDataFromLocalStorage = () => {
+      setLoading(true);
       try {
-        const response = await axios.get(`/api/user/${userId}`);
-        setUserData(response.data); // Данные профиля пользователя
+        // Извлекаем данные из локального хранилища
+        const storedUserData = localStorage.getItem("user");
+        if (storedUserData) {
+          setUserData(JSON.parse(storedUserData)); // Парсим и сохраняем данные пользователя
+        } else {
+          setError("No user data available in local storage");
+        }
       } catch (err) {
-        setError('Error fetching user data'); // В случае ошибки, сохраняем её
+        console.error("Error loading user data from localStorage:", err);
+        setError("Failed to load user data");
       } finally {
-        setLoading(false); // По завершению загрузки, ставим статус в false
+        setLoading(false);
       }
     };
 
-    fetchUserData();
-  }, [userId]);
+    fetchUserDataFromLocalStorage();
+  }, []);
 
   const openModal = (post: Post) => {
     setSelectedPost(post);
@@ -77,7 +76,7 @@ export const Profile: React.FC<ProfileProps> = ({ userId }) => {
     <div className={s.profileContainer}>
       <div className={s.header}>
         <img
-          src={userData.profile_image || '/default-avatar.png'} // Используем URL, полученный с сервера
+          src={userData.profile_image || 'https://res.cloudinary.com/dtbzos500/image/upload/v1731097780/iqhbfm0nzqrmnz5nwcfc.jpg'}
           alt="Profile"
           className={s.profileImage}
         />
@@ -87,8 +86,9 @@ export const Profile: React.FC<ProfileProps> = ({ userId }) => {
           <div className={s.stats}>
             <span>{userData.posts_count} posts</span>
             <span>{userData.followers_count} followers</span>
-            <span>{userData.following_count} following</span>
-          </div>
+            <span>{userData.following_count} following</span></div>
+          <div> <p>{userData.bio}</p></div> 
+          
           <p className={s.bio}>{userData.bio}</p>
         </div>
       </div>

@@ -10,6 +10,7 @@ export const HomePage = () => {
 
   const handleLogout = () => {
     localStorage.removeItem("token"); // Удаляем токен из localStorage
+    localStorage.removeItem("user"); 
     navigate("/signin"); // Перенаправление на страницу входа
   };
 

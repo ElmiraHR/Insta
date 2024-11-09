@@ -26,11 +26,9 @@ export const Login = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    $api
-    .post("/auth/login", userObject)
-    .then((res) => localStorage.setItem("token", res.data.token));
+    
     let hasError = false;
-
+  
     // Валидация email
     if (userObject.email === "") {
       setShowEmailError(true);
@@ -44,7 +42,7 @@ export const Login = () => {
       setShowEmailError(false);
       setEmailErrorMessage("");
     }
-
+  
     // Валидация пароля
     if (userObject.password === "") {
       setShowPasswordError(true);
@@ -58,14 +56,17 @@ export const Login = () => {
       setShowPasswordError(false);
       setPasswordErrorMessage("");
     }
-
+  
     if (!hasError) {
       setIsSubmitting(true);
       setAuthError(""); // Сброс ошибки авторизации перед новым запросом
+      
       try {
         const response = await $api.post("/auth/login", userObject);
         if (response.status === 200) {
           // Успешная авторизация
+          localStorage.setItem("token", response.data.token);
+          localStorage.setItem("user", JSON.stringify(response.data.user));
           navigate("/homePage");
         } else {
           // Ошибка при авторизации
@@ -79,6 +80,7 @@ export const Login = () => {
       }
     }
   };
+  
 
   const handleButtonClick = () => {
     // Обертка для handleSubmit без параметров

@@ -85,17 +85,18 @@ export const checkUser = async (req, res) => {
 // Функция для обновления пароля
 export const updatePassword = async (req, res) => {
   try {
-    const { userId, newPassword } = req.body;  // Получаем данные из тела запроса
+    console.log("Request Body:", req.body);  // Для отладки
+    const { email, newPassword } = req.body;
 
-    if (!userId || !newPassword) {
+    if (!email || !newPassword) {
       return res.status(400).json({ message: "Необходимые данные не были переданы" });
     }
 
     // Хешируем новый пароль перед сохранением в базе данных
     const hashedPassword = await bcrypt.hash(newPassword, 10);
 
-    // Находим пользователя по ID
-    const user = await User.findById(userId);
+    // Находим пользователя по email
+    const user = await User.findOne({ email });
 
     if (!user) {
       return res.status(404).json({ message: "Пользователь не найден" });

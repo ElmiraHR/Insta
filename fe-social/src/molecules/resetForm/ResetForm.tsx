@@ -38,24 +38,25 @@ export const ResetForm = () => {
   // Сохранение нового пароля в базе данных
   const handleUpdatePassword = async (e) => {
     e.preventDefault();
-    console.log("Updating password for:", userObject.email, "New password:", newPassword); // Проверка данных
+    console.log("Email:", userObject.email, "New Password:", newPassword);  // Для отладки
     try {
       const response = await $api.post("/auth/update-password", {
-        email: userObject.email,
+        email: userObject.email, 
         newPassword,
       });
       if (response.status === 200) {
-        alert("Password updated successfully");
-        setIsPasswordReset(false); // Скрываем инпут для смены пароля
+        alert("Пароль обновлён успешно");
+        setIsPasswordReset(false);
         setNewPassword("");
       } else {
-        alert("Failed to update password");
+        alert("Не удалось обновить пароль");
       }
     } catch (error) {
-      console.error("Error updating password:", error);
-      alert("Failed to update password");
+      console.error("Ошибка при обновлении пароля:", error);
+      alert("Ошибка при обновлении пароля");
     }
   };
+  
   
 
   return (
