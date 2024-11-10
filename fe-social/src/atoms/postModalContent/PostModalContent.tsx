@@ -18,8 +18,9 @@ type PostModalContentProps = {
 };
 
 const PostModalContent: React.FC<PostModalContentProps> = ({
+  
   postId,
-  userId,
+   userId = localStorage.getItem("userId"),// Добавьте проверку, если userId хранится в localStorage
   postImageUrl,
   comments,
   newCommentText,
@@ -29,28 +30,25 @@ const PostModalContent: React.FC<PostModalContentProps> = ({
   addEmoji,
 }) => {
   const handleAddComment = async () => {
-    if (!newCommentText.trim()) return; // Проверка на пустой комментарий
- console.log(postId, userId); // Печатает значения, чтобы проверить их
-          if (!postId || !userId) {
-            console.error('postId or userId is missing');
-            return;
-          }
+    if (!newCommentText.trim()) return;
+  
+    console.log("Post ID:", postId, "User ID:", userId);
+  
+    if (!postId || !userId) {
+      console.error('postId or userId is missing');
+      return;
+    }
     try {
-      // Запрос на добавление комментария
       await axios.post(`/api/comment/${postId}/${userId}`, {
         comment_text: newCommentText,
       });
-
-      // Очистка поля ввода
       setNewCommentText('');
-
-      // Можно обновить список комментариев, если нужно
-      // Например, сделайте запрос для получения обновленного списка комментариев
     } catch (error) {
       console.error('Error adding comment:', error);
-      // Обработка ошибок, можно уведомить пользователя
     }
   };
+  
+  
 
   return (
     <div className={s.boxModalFull} style={{ display: "flex", justifyContent: "space-between" }}>

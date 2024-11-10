@@ -19,6 +19,15 @@ export const getUserPosts = async (req, res) => {
     res.status(500).json({ error: 'Ошибка при получении постов' });
   }
 };
+// Получение всех постов
+export const getAllPosts = async (req, res) => {
+  try {
+    const posts = await Post.find();
+    res.status(200).json(posts);
+  } catch (error) {
+    res.status(500).json({ error: 'Ошибка при получении постов' });
+  }
+};
 
 // Создание нового поста
 export const createPost = async (req, res) => {

@@ -32,14 +32,14 @@
 //   messageSocketHandler(socket, io);
 // });
 
-import express from 'express';
+
 import dotenv from 'dotenv';
 import connectDB from './config/db.js';
 import app from './app.js';
 import { Server } from 'socket.io';
 import { messageSocketHandler, authenticateSocket } from './routes/messageRoutes.js';
 import authRoutes from './routes/authRoutes.js'; // Добавляем импорт маршрутов аутентификации
-
+import express from 'express';
 dotenv.config();
 connectDB();
 

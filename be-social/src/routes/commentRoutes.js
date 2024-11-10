@@ -5,7 +5,7 @@ import authMiddleware from '../middlewares/authMiddleware.js';
 const router = express.Router();
 
 // Добавить комментарий к посту
-router.post('/:postId/:userId', authMiddleware, createComment);
+router.post('/:postId', authMiddleware, createComment);
 
 // Получить все комментарии к посту
 router.get('/:postId', authMiddleware, getPostComments);
